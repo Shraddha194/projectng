@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="productform" (ngSubmit)="onProductAdd()">
+      <input type="number" formControlName="pro_id" class="form-control" >
+      <div [hidden]="productform.get('pro_id').pristine || productform.get('pro_id').valid" class="alert alert-danger">
+        Product Id Is Required
+      </div>
+      <input type="text" formControlName="pro_name" class="form-control" >
+      
+      <input type="number" formControlName="pro_price" class="form-control" >
+      <div *ngIf="productform.get('pro_price').hasError('required')" class="alert alert-danger">
+        Product Price Is Required
+      </div>
+      <div *ngIf="productform.get('pro_price').hasError('max')" class="alert alert-danger">
+        Product Price max length 3
+      </div>
+      <input type="number" formControlName="pro_soh" class="form-control" >
+      <div  *ngIf="productform.get('pro_soh').hasError('required')" class="alert alert-danger">
+        Product SOH Is Required
+      </div>
+      <div  *ngIf="productform.get('pro_soh').hasError('max')" class="alert alert-danger">
+        Product SOH max 5
+      </div>
+      <button [disabled]="productform.invalid" type="submit" class="btn btn-primary">Add Product</button>
+    </form>
+  </div>
+</div>

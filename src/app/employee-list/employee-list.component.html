@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Employee Id</th>
+      <th>Employee Name</th>
+      <th>Employee Salary</th>
+      <th>Employee Designation</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of empArr">
+        <td>{{item.emp_id}}</td>
+        <td>{{item.emp_name}}</td>
+        <td>{{item.emp_salary}}</td>
+        <td>{{item.emp_desg}}</td>
+        <td><button (click)="onDelete(item)">Delete</button> |
+        <button (click)="onUpdate(item)">Update</button></td>
+    </tr>
+  </tbody>
+</table>

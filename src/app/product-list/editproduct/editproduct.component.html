@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <input type="number" #pro_id [value]="prod.pro_id" class="form-control" placeholder="Enter Product Id">
+    <input type="text" #pro_name [value]="prod.pro_name" class="form-control" placeholder="Enter Product Name">
+    <input type="number" #pro_price [value]="prod.pro_price" class="form-control" placeholder="Enter Product Price">
+    <input type="number" #pro_soh [value]="prod.pro_soh" class="form-control" placeholder="Enter Product SOH">
+    <button (click)="onSaveProduct(pro_id.value,pro_name.value,pro_price.value,pro_soh.value)">Save</button>
+  </div>
+</div>

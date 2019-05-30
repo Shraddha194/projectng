@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <form #f="ngForm" (ngSubmit)="onProductSave(f)">
+      <input type="number" class="form-control" name="pro_id" id="pro_id" ngModel required #pro_id="ngModel"
+        placeholder="Enter Product Id">
+      <div [hidden]="pro_id.pristine || pro_id.valid" class="alert alert-danger">
+        Product Id is Required
+      </div>
+      <input type="text" class="form-control" name="pro_name" id="pro_name" ngModel required email #name="ngModel"
+        placeholder="Enter Product Name">
+      <div *ngIf="name.errors?.required && name.touched" class="alert alert-danger">
+        Email Is Required.
+      </div>
+      <div *ngIf="name.errors?.email && name.touched" class="alert alert-danger">
+        Email Is Invalid
+      </div>
+      <input type="number" class="form-control" name="pro_price" id="pro_price" ngModel appPricedirective
+        #pro_price="ngModel" placeholder="Enter Product Price">
+      <div *ngIf="pro_price.errors?.pricelessthanzero && pro_price.touched" class="alert alert-danger">
+        Price can't less than 0
+      </div>
+      <input type="text" class="form-control" name="pro_soh" id="pro_soh" ngModel pattern="[7-9][0-9]{9}"
+        #pro_soh="ngModel" placeholder="Enter Product SOH">
+      <div [hidden]="pro_soh.pristine || pro_soh.valid">
+        Mobile should start 7,8,9 and not more than 10 digits
+      </div>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>

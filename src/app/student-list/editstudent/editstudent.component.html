@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <input type="number" [value]="stud.s_id" #s_id class="form-control" placeholder="Enter Student Id">
+    <input type="text" [value]="stud.s_name" #s_name class="form-control" placeholder="Enter Student Name">
+    <!-- <input type="text" [value]="stud.s_city" #s_city class="form-control" placeholder="Enter Student City">
+    <input type="text" [value]="stud.s_attendance" #s_attendance class="form-control" placeholder="Enter Student Attendance">-->
+    <select #s_city class="form-control"> 
+      <option>Select</option>
+      <option [selected]="stud.s_city=='ahemdabad'">ahemdabad</option>
+      <option [selected]="stud.s_city=='rajkot'">rajkot</option>
+      <option [selected]="stud.s_city=='surat'">surat</option>
+    </select>
+    <input type="radio" #absent name="s_attendance" value="absent" [checked]="stud.s_attendance=='absent'">absent
+    <input type="radio" #present name="s_attendance" value="present" [checked]="stud.s_attendance=='present'">present 
+    <button
+      (click)="onStudentSave(s_id.value,s_name.value,s_city.value,absent.checked ? absent.value: present.checked ? present.value:null)">Save</button>
+
+  </div>
+</div>

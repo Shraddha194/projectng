@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Student-Id</th>
+      <th>Student-Name</th>
+      <th>Student-City</th>
+      <th>Student-Attendance</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of studentArr">
+      <td>{{item.s_id}}</td>
+      <td>{{item.s_name}}</td>
+      <td>{{item.s_city}}</td>
+      <td>{{item.s_attendance}}</td>
+      <td><button (click)="onDelete(item)">Delete</button> | 
+      <button (click)="onUpdate(item)">Update</button></td>
+    </tr>
+  </tbody>
+</table>

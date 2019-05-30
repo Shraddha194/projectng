@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+      <form #f="ngForm" (ngSubmit)="onEmployeeSave(f)">
+          <input type="number" class="form-control" name="emp_id" id="emp_id" ngModel
+          placeholder="Enter Employee Id">
+        
+          <input type="text" class="form-control" name="emp_name" id="emp_name" ngModel
+          placeholder="Enter Employee Name">
+          <input type="number" class="form-control" name="emp_salary" id="emp_salary" ngModel
+          placeholder="Enter Employee Salary">
+          <input type="text" class="form-control" name="emp_desg" id="emp_desg" ngModel
+          placeholder="Enter Employee Designation">
+          <button type="submit">Save</button>
+    </form>
+  </div>
+</div>

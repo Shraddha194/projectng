@@ -1,0 +1,9 @@
+<ul *ngIf="emparr.length>0;else elseBlock">
+  <li *ngFor="let item of emparr">{{item.emp_name}} <button (click)="onDelSortEmp(item)">Delete Emp</button></li>
+</ul>
+<ng-template #elseBlock>
+  <div>
+    <H1>No Employee Select</H1>
+  </div>
+
+</ng-template>

@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product-Id</th>
+      <th>Product-Name</th>
+      <th>Product-Price</th>
+      <th>Product-Soh</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productArr">
+      <td>{{item.pro_id}}</td>
+      <td>{{item.pro_name}}</td>
+      <td>{{item.pro_price}}</td>
+      <td>{{item.pro_soh}}</td>
+      <td><button (click)="onDelete(item)">Delete</button> | 
+      <button (click)="onUpdate(item)">Update</button></td>
+    </tr>
+  </tbody>
+</table>
